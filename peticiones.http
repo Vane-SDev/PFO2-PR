@@ -1,5 +1,17 @@
+
 ### Prueba de Registro
 POST http://127.0.0.1:5000/registro
+Content-Type: application/json
+
+{
+  "usuario": "admi",
+  "contraseña": "1234"
+}
+
+
+
+### Prueba de Login
+POST http://127.0.0.1:5000/login
 Content-Type: application/json
 
 {

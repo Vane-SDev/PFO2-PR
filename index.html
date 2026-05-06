@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API REST - Gestión de Tareas</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f4f7f6; }
+        .container { background-color: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        .endpoint { background: #e8f4f8; border-left: 4px solid #3498db; padding: 15px; margin-bottom: 20px; border-radius: 4px; }
+        code { background: #2c3e50; color: #ecf0f1; padding: 2px 6px; border-radius: 4px; }
+        .method { font-weight: bold; color: #e74c3c; }
+        .success { color: #27ae60; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1> Sistema de Gestión de Tareas - PFO 2</h1>
+        <p><strong>Desarrolladora:</strong> Vanesa Soria</p>
+        <p>Bienvenido al cliente web estático del proyecto. Debido a la arquitectura de la web, esta interfaz estática (alojada en GitHub Pages) está diseñada para documentar y presentar la API REST desarrollada en Flask con SQLite.</p>
+        
+        <h2>Instrucciones para el Evaluador</h2>
+        <p>Para probar la funcionalidad completa, por favor clone el repositorio y ejecute <code>python servidor.py</code> localmente. Luego, utilice Postman o Thunder Client para consumir los siguientes endpoints:</p>
+
+        <div class="endpoint">
+            <p><span class="method">POST</span> <code>/registro</code></p>
+            <p>Registra un nuevo usuario hasheando su contraseña en SQLite.</p>
+            <p><strong>Body esperado:</strong> <code>{"usuario": "admin", "contraseña": "123"}</code></p>
+        </div>
+
+        <div class="endpoint">
+            <p><span class="method">POST</span> <code>/login</code></p>
+            <p>Valida las credenciales contra la base de datos.</p>
+            <p><strong>Body esperado:</strong> <code>{"usuario": "admin", "contraseña": "123"}</code></p>
+        </div>
+
+        <div class="endpoint">
+            <p><span class="method">GET</span> <code>/tareas</code></p>
+            <p>Retorna la vista HTML de bienvenida al sistema tras un acceso exitoso.</p>
+        </div>
+
+        <h3> Respuestas Conceptuales de la PFO</h3>
+        <p><strong>1. ¿Por qué hashear contraseñas?</strong><br>Para evitar que, en caso de una vulneración de la base de datos, los atacantes obtengan las credenciales en texto plano. El hash es unidireccional, protegiendo la identidad de los usuarios.</p>
+        <p><strong>2. Ventajas de SQLite:</strong><br>No requiere configuración de servidor, es portable (todo vive en un archivo <code>.db</code>), y viene integrado nativamente en Python, ideal para desarrollo rápido y prototipado.</p>
+    </div>
+</body>
+</html>
